@@ -1,68 +1,85 @@
-
-import java.util.Scanner;
-
 public class Movie {
-	private int rank;
-  private String Title;
-  private String Genre;
-  private String Description;
-  private String Director;
-  private String Actors;
-	private int Year;
-	private int Duration; //rutime in minute
-	private double Rating;
-  private int Votes;
-  private Double Revenue;
-  private int Metascore;
-  Movie(){
-    this.rank = 0;
-    this.Title = "Invalid_data";
-    this.Genre = "";
-    this.Description = "";
-    this.Director = "";
-    this.Actors = "";
-    this.Year = 0;
-    this.Duration = 0; //rutime in minute
-    this.Rating = 0.0;
-    this.Votes = 0;
-    this.Revenue = 0.0;
-    this.Metascore = 0;
-  }
-  Movie(int rank, String Title, String Genre, String Description, String Director, String Actors, int Year, int Duration, double Rating, int Votes, double Revenue, int Metascore){
-    this.rank = rank;
-    this.Title = Title;
-    this.Genre = Genre;
-    this.Description = Description;
-    this.Director = Director;
-    this.Actors = Actors;
-    this.Year = Year;
-    this.Duration = Duration; //rutime in minute
-    this.Rating = Rating;
-    this.Votes = Votes;
-    this.Revenue = Revenue;
-    this.Metascore = Metascore;
-  }
-  // DECLARE SETTERS
+    private int rank;
+    private String title;
+    private String genre;
+    private String description;
+    private String director;
+    private String actors;
+    private int year;
+    private int duration; //runtime in minute
+    private double rating;
+    private int votes;
+    private Double revenue;
+    private int metascore;
 
-  // DECLARE GETTERS
-  String getTitle(){
-    return this.Title;
-  }
+    Movie() {
+        this.rank = 0;
+        this.title = "Invalid_data";
+        this.genre = "";
+        this.description = "";
+        this.director = "";
+        this.actors = "";
+        this.year = 0;
+        this.duration = 0; //runtime in minute
+        this.rating = 0.0;
+        this.votes = 0;
+        this.revenue = 0.0;
+        this.metascore = 0;
+    }
 
-///OVERIDE THE compareTo METHOD TO COMPARE by REVENUE
+    Movie(int rank, String title, String genre, String description, String director, String actors, int year,
+          int duration, double rating, int votes, double revenue, int metascore) {
+        this.rank = rank;
+        this.title = title;
+        this.genre = genre;
+        this.description = description;
+        this.director = director;
+        this.actors = actors;
+        this.year = year;
+        this.duration = duration; //runtime in minute
+        this.rating = rating;
+        this.votes = votes;
+        this.revenue = revenue;
+        this.metascore = metascore;
+    }
+    // DECLARE SETTERS
+
+    // Not appropriate to declare setters when not used
+
+    // DECLARE GETTERS
+
+    // Only 2 attributes require getters.
+    public String getTitle() {
+        return this.title;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    ///OVERRIDE THE compareTo METHOD TO COMPARE by REVENUE
+    public int compareTo(Movie otherMovie) {
+        return otherMovie.revenue.compareTo(this.revenue);
+    }
+
+    /* IMPLEMENT  printTitleRevenue METHOD WHICH  PRINTS THE TITLE
+    OF THE MOVIE AND ITS REVENUE*/
+    public void printTitleRevenue() {
+        if (!this.title.equals("Invalid_data")) {
+            System.out.printf("TITLE: %s \nREVENUE: $%.2fM\n", this.title, this.revenue);
+        }
+    }
+
+    //Method to print the details of a movie
+    public void printMovieDetails() {
+        System.out.println("TITLE: " + this.title + ";\nGENRE: " + this.genre + ";\nDESCRIPTION: " + this.description +
+                ";\nDIRECTOR: " + this.director + ";\nACTORS:" + this.actors + ";\nYEAR: " + this.year +
+                ";\nDURATION: " + this.duration + " minutes"
+                + ";\nRATING: " + this.rating + ";\nVOTES: " + this.votes + ";\nREVENUE: $" + this.revenue +
+                " Million USD;\nMETASCORE: " + this.metascore + "\n");
+        System.out.println();
+
+    }
 
 
-/* IMPLEMENT  printTitleRevnue METHOD WHICH  PRINTS THE TITLE 
-OF THE MOVIE AND IT'S REVENUE*/
-
-
-	
-
-//Method to print the detail of a movie
-	public void printMovieDetails() {
-			System.out.println("TITLE: " + this.Title + "; GENRE: " + this.Genre + "; DESCRIPTION: " + this.Description + "; DIRECTOR: " + this.Director + "; ACTORS:" + this.Actors  + "; YEAR: " + this.Year  + "; DURATION: " + this.Duration + " minutes"  
-					 + "; RATING: " + this.Rating + "; VOTES: " + this.Votes + "; REVENUE: $" + this.Revenue + " Million USD; METASCORE: " + this.Metascore+ "\n");
-			System.out.println();
-		
-	}
 }
