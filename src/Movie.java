@@ -1,16 +1,16 @@
 public class Movie {
-    private int rank;
-    private String title;
-    private String genre;
-    private String description;
-    private String director;
-    private String actors;
-    private int year;
-    private int duration; //runtime in minute
-    private double rating;
-    private int votes;
-    private Double revenue;
-    private int metascore;
+    private final int rank;
+    private final String title;
+    private final String genre;
+    private final String description;
+    private final String director;
+    private final String actors;
+    private final int year;
+    private final int duration; //runtime in minute
+    private final double rating;
+    private final int votes;
+    private final Double revenue;
+    private final int metascore;
 
     Movie() {
         this.rank = 0;
@@ -70,16 +70,16 @@ public class Movie {
         }
     }
 
-    //Method to print the details of a movie
-    public void printMovieDetails() {
-        System.out.println("TITLE: " + this.title + ";\nGENRE: " + this.genre + ";\nDESCRIPTION: " + this.description +
-                ";\nDIRECTOR: " + this.director + ";\nACTORS:" + this.actors + ";\nYEAR: " + this.year +
-                ";\nDURATION: " + this.duration + " minutes"
-                + ";\nRATING: " + this.rating + ";\nVOTES: " + this.votes + ";\nREVENUE: $" + this.revenue +
-                " Million USD;\nMETASCORE: " + this.metascore + "\n");
-        System.out.println();
-
-    }
+    // Method to print the details of a movie
+    // not used
+//    public void printMovieDetails() {
+//        System.out.println("TITLE: " + this.title + ";\nGENRE: " + this.genre + ";\nDESCRIPTION: " + this.description +
+//                ";\nDIRECTOR: " + this.director + ";\nACTORS:" + this.actors + ";\nYEAR: " + this.year +
+//                ";\nDURATION: " + this.duration + " minutes"
+//                + ";\nRATING: " + this.rating + ";\nVOTES: " + this.votes + ";\nREVENUE: $" + this.revenue +
+//                " Million USD;\nMETASCORE: " + this.metascore + "\n");
+//        System.out.println();
+//    }
 
 
 }
